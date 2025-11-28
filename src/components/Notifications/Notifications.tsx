@@ -1,0 +1,27 @@
+import { Transition } from "@headlessui/react";
+
+import { Notification } from "components/Notifications";
+
+import { useNotificationStore } from "stores/notifications";
+
+export const Notifications = () => {
+  const { notifications, dismissNotification } = useNotificationStore();
+
+  return (
+    <div aria-live="assertive">
+      <Transition
+        show={notifications.length > 0}
+        as="div"
+        className="pointer-events-none fixed inset-0 z-50 flex flex-col items-end space-y-4 px-4 py-6 sm:p-6"
+      >
+        {notifications.map((notification) => (
+          <Notification
+            key={notification.id}
+            notification={notification}
+            onDismiss={dismissNotification}
+          />
+        ))}
+      </Transition>
+    </div>
+  );
+};

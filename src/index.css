@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    .highlight {
+      @apply bg-yellow-200;
+    }
+  }
+
+  body {
+    @apply text-gray-900;
+  }
+}
