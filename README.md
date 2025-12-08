@@ -1,9 +1,25 @@
+## About Teledash
+
+Teledash is an open-source software for monitoring and analyzing anti-democratic content on Telegram channels and groups. 
+
+It consists of three separate repositories:
+
+- Frontend (this repository) - Web interface
+- [Backend](https://github.com/ARAI-Telegram/teledash-backend) - Core API and worker services for data collection and management. See here for more information on Teledash in general
+- [Processing Backend](https://github.com/ARAI-Telegram/teledash-backend-processing) (optional) - ML-powered services (semantic search, transcription, classification)
+
+> **For a more comprehensive overview of the Teledash project** (architecture, functionalities), please refer to the [Backend repository README](https://github.com/ARAI-Telegram/teledash-backend#readme).
+
 # Teledash Frontend
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 It's based on [this boilerplate](https://github.com/alan2207/bulletproof-react/) (forked 08.01.2022)
 
 ## Development
+
+### `npm install`
+
+Installs all required Node modules listed in package.json.
 
 ### `npm start`
 
@@ -19,13 +35,19 @@ Launches the test runner in the interactive watch mode. See the section about [r
 
 ## Deployment
 
+### `npm install`
+
+Installs all required Node modules listed in package.json.
+
 ### `npm run build`
 
-Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes. The app is ready to be deployed! 
+Builds the app for production to the `build` folder. It bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
 
-Make sure to change the *.env* file and change `VITE_API_URL` accordingly (e.g. to *api.example.com:3000*).
+Make sure to change the *.env* file and set `VITE_API_URL` accordingly (e.g. to `api.example.com:3000`).
 
 See [deployment](https://create-react-app.dev/docs/deployment/) for more information on continuous deployment and hosting options.
 
-## Backend
-See [teledash](https://github.com/democ-de/teledash) repository for further information.
+
+## Funding
+
+![DATIpilot Logo](./logoDATIpilot.png)
