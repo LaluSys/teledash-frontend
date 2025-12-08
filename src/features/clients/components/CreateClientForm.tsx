@@ -1,3 +1,4 @@
+import { mdiPlusThick } from "@mdi/js";
 import { Button, Dialog, DialogCloseButton } from "components/Elements";
 import { Form, TextInputGroup } from "components/Form";
 import {
@@ -60,8 +61,9 @@ export function CreateClientForm({ onSuccess }: CreateClientFormProps) {
               id="phone_number"
               type="tel"
               label="Phone Number"
+              startIcon={mdiPlusThick}
               placeholder="Please enter a phone number"
-              description="The phone number of the Telegram account to be authenticated."
+              description="The phone number (including country code) of the Telegram account to be authenticated."
               registration={register("phone_number", {
                 onChange: (e) => {
                   setValue("phone_number", e.target.value.replace(/\D/g, ""));
