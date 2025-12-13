@@ -11,8 +11,9 @@ export type PostAddChatBody =
   API.paths["/clients/{client_id}/add-chat"]["post"]["requestBody"]["content"]["application/json"];
 export type ChatSortBy = API.components["schemas"]["ChatSortBy"];
 export type GetChatsStatsParams =
-  API.paths["/messages/stats"]["get"]["parameters"]["query"];
-export type GetChatsStatsResponse = { [key: string]: [StatsEntry] };
+  API.paths["/chats/stats"]["get"]["parameters"]["query"];
+export type GetChatsStatsResponse =
+  API.paths["/chats/stats"]["get"]["responses"]["200"]["content"]["application/json"];
 
 export type GetMessagesParams =
   API.paths["/messages"]["get"]["parameters"]["query"];
