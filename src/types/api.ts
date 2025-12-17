@@ -646,7 +646,7 @@ export interface paths {
         };
         /**
          * Get Labeling Data
-         * @description Get messages for manual labeling
+         * @description Get a message for manual labeling
          */
         get: operations["get_labeling_data_labeling_get"];
         put?: never;
@@ -3236,7 +3236,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["MessageForLabeling"];
+                    "application/json": components["schemas"]["MessageForLabeling"] | null;
                 };
             };
             /** @description Validation Error */
