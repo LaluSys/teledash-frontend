@@ -1,0 +1,17 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    networks:
+      - teledash_default
+    restart: unless-stopped
+
+networks:
+  teledash_default:
+    external: true

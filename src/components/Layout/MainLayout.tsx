@@ -18,6 +18,10 @@ import {
   mdiCog,
   mdiBookmark,
   mdiTag,
+  mdiLightbulbOnOutline,
+  mdiEmoticonHappyOutline,
+  mdiAccountMultiple,
+  mdiTextSearch,
 } from "@mdi/js";
 import Icon from "@mdi/react";
 import clsx from "clsx";
@@ -26,6 +30,7 @@ import { NavLink, Link } from "react-router-dom";
 
 import { useCountTotalUnreadMessages } from "features/saved-searches";
 import { useUser, useLogout } from "lib/auth";
+import { MLProcessingStatus } from "components/Elements/MLProcessingStatus";
 
 import { APP_NAME } from "config";
 
@@ -70,6 +75,26 @@ const SideNavigation = ({ onItemClick }: { onItemClick?: () => void }) => {
       name: "Tags",
       to: "./tags",
       icon: mdiTag,
+    },
+    {
+      name: "Topics",
+      to: "./topics",
+      icon: mdiLightbulbOnOutline,
+    },
+    {
+      name: "Sentiment",
+      to: "./analysis/sentiment",
+      icon: mdiEmoticonHappyOutline,
+    },
+    {
+      name: "Entities",
+      to: "./analysis/entities",
+      icon: mdiAccountMultiple,
+    },
+    {
+      name: "N-grams",
+      to: "./analysis/ngrams",
+      icon: mdiTextSearch,
     },
     {
       name: "Configuration",
@@ -321,7 +346,8 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
             <span className="sr-only">Open sidebar</span>
             <Icon path={mdiMenu} size={1} aria-hidden="true" />
           </button>
-          <div className="flex flex-1 justify-end px-4">
+          <div className="flex flex-1 items-center justify-between px-4">
+            <MLProcessingStatus />
             <div className="ml-4 flex items-center md:ml-6">
               <UserNavigation />
             </div>
