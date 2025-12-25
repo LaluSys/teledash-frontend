@@ -24,6 +24,12 @@ const { SavedSearches } = lazyImport(
 const { Search } = lazyImport(() => import("features/search"), "Search");
 const { User } = lazyImport(() => import("features/users"), "User");
 const { ChatTagView } = lazyImport(() => import("features/chats"), "ChatTagView");
+const { TopicExplorer } = lazyImport(() => import("features/topics"), "TopicExplorer");
+const { TopicDetail } = lazyImport(() => import("features/topics"), "TopicDetail");
+const { SentimentDashboard } = lazyImport(() => import("features/sentiment"), "SentimentDashboard");
+const { EntityExplorer } = lazyImport(() => import("features/entities"), "EntityExplorer");
+const { EntityDetail } = lazyImport(() => import("features/entities"), "EntityDetail");
+const { NgramExplorer } = lazyImport(() => import("features/ngrams"), "NgramExplorer");
 
 const App = () => {
   return (
@@ -65,6 +71,12 @@ export const protectedRoutes = [
       { path: "/saved-searches", element: <SavedSearches /> },
       { path: "/saved-searches/:savedSearchId", element: <SavedSearch /> },
       { path: "/tags", element: <ChatTagView /> },
+      { path: "/topics", element: <TopicExplorer /> },
+      { path: "/topics/:topicId", element: <TopicDetail /> },
+      { path: "/analysis/sentiment", element: <SentimentDashboard /> },
+      { path: "/analysis/entities", element: <EntityExplorer /> },
+      { path: "/analysis/entities/:entityId", element: <EntityDetail /> },
+      { path: "/analysis/ngrams", element: <NgramExplorer /> },
       { path: "/account", element: <Profile /> },
       { path: "/admin", element: <Admin /> },
       { path: "/config", element: <Configuration /> },
